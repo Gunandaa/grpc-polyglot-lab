@@ -17,7 +17,7 @@ function main() {
     console.log("Mengirim request ke Go Server menggunakan Node.js...");
     client.GetUserProfile({ user_id: 1 }, (error, response) => {
         if (!error) {
-            console.log(`Respon dari Server -> Nama: ${response.name}, Email: ${response.email}`);
+            console.log(`Respon dari Server -> Nama: ${response.name}, Email: ${response.email}, Telepon: ${response.phone}`);
         } else {
             console.error("Terjadi error:", error);
         }
