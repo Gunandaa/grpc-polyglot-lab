@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package user;
+
+// Opsi khusus untuk bahasa Go agar struktur output rapi
+option go_package = "./pb";
+
+// Kontrak Request: Klien wajib mengirim user_id berupa angka
+message UserRequest {
+  int32 user_id = 1;
+}
+
+// Kontrak Response: Server akan mengembalikan nama dan email
+message UserResponse {
+  string name = 1;
+  string email = 2;
+}
+
+// Definisi Service gRPC
+service UserService {
+  rpc GetUserProfile (UserRequest) returns (UserResponse);
+}
